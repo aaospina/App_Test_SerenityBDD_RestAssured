@@ -26,7 +26,7 @@ public class CreateAnalysis {
         latlng.add(0.5);
         latlng.add(0.2);
 
-        steps.createAnalysis("Estacion 101", latlng, "Aforox")
+        steps.createAnalysis("Estacion 101", latlng, "Aforox", "SIMPLE_VOLUMES")
                 .statusCode(201);
     }
 

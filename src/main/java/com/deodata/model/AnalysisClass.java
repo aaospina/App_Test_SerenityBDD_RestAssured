@@ -8,6 +8,11 @@ public class AnalysisClass {
     private String directory;
     private List<Double> latlng;
     private String name;
+    private String type;
+
+    public String getType() { return type; }
+
+    public void setType(String type) { this.type = type; }
 
     public int getId() {
         return id;
@@ -29,9 +34,7 @@ public class AnalysisClass {
         return latlng;
     }
 
-    public void setLatlng(List<Double> latlng) {
-        this.latlng = latlng;
-    }
+    public void setLatlng(List<Double> latlng) { this.latlng = latlng; }
 
     public String getName() {
         return name;

@@ -33,4 +33,11 @@ public class AuthenticatesAUser extends TestBase {
                 .statusCode(401);
     }
 
+    @Title("Get a tocken")
+    @Test
+    public void test003(){
+
+        steps.getTocken("a.ospina+client@transportsystems.co", "Ts12345*");
+    }
+
 }
