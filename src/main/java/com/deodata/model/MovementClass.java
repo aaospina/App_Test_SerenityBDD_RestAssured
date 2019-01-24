@@ -5,8 +5,8 @@ import java.util.List;
 public class MovementClass {
 
     private String cameraDirectory;
-    private List<Double> entryLine;
-    private List<Double> exitLine;
+    private List<List<Double>> entryLine;
+    private List<List<Double>> exitLine;
     private String name;
     private int snapshotIndex;
 
@@ -18,19 +18,19 @@ public class MovementClass {
         this.cameraDirectory = cameraDirectory;
     }
 
-    public List<Double> getEntryLine() {
+    public List<List<Double>> getEntryLine() {
         return entryLine;
     }
 
-    public void setEntryLine(List<Double> entryLine) {
+    public void setEntryLine(List<List<Double>> entryLine) {
         this.entryLine = entryLine;
     }
 
-    public List<Double> getExitLine() {
+    public List<List<Double>> getExitLine() {
         return exitLine;
     }
 
-    public void setExitLine(List<Double> exitLine) {
+    public void setExitLine(List<List<Double>> exitLine) {
         this.exitLine = exitLine;
     }
 

@@ -15,6 +15,7 @@ import java.util.ArrayList;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CreateAnalysis {
 
+    static int analysisId;
     @Steps
     AnalysisSerenitySteps steps;
 
@@ -28,6 +29,12 @@ public class CreateAnalysis {
 
         steps.createAnalysis("Estacion 101", latlng, "Aforox", "SIMPLE_VOLUMES")
                 .statusCode(201);
+    }
+
+    @Title("Consult the id of the last analysis created")
+    @Test
+    public void test002(){
+        System.out.println(AnalysisSerenitySteps.getLastAnalysisCreated());
     }
 
 }
