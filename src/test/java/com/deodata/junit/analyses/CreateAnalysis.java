@@ -1,6 +1,7 @@
 package com.deodata.junit.analyses;
 
 import com.deodata.cucumber.serenity.AnalysisSerenitySteps;
+import com.deodata.utils.Ramdon;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Title;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 public class CreateAnalysis {
 
     static int analysisId;
+    static String analysisName;
     @Steps
     AnalysisSerenitySteps steps;
 
@@ -27,7 +29,9 @@ public class CreateAnalysis {
         latlng.add(0.5);
         latlng.add(0.2);
 
-        steps.createAnalysis("Estacion 101", latlng, "Aforox", "SIMPLE_VOLUMES")
+        analysisName = "Analysis_" + Ramdon.getRandomValue();
+
+        steps.createAnalysis("Estacion_101", latlng, analysisName, "SIMPLE_VOLUMES")
                 .statusCode(201);
     }
 

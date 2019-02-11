@@ -32,7 +32,7 @@ public class AnalysisSerenitySteps {
                 .then();
     }
 
-    @Step("Create the analysis in the directory: {0}, and the latlng: {1}, and the name: {2}")
+    /*@Step("Create the analysis in the directory: {0}, and the latlng: {1}, and the name: {2}")
     public void createAnalysis2(String directory, List<Double> latlng, String name, String type){
 
         AnalysisClass analysis = new AnalysisClass();
@@ -54,20 +54,17 @@ public class AnalysisSerenitySteps {
                 .extract()
                 .jsonPath()
                 .getInt("id");
-    }
+    }*/
 
-    @Step("Consult the last analysis created")
-    public static int getLastAnalysisCreated(){
+    @Step("Get the analysis Id by the analysisName")
+    public static int getAnalysisIdByName(){
         return SerenityRest.rest().given()
                 .header("Authorization", "Bearer " + LoginSerenitySteps.tocken)
                 .contentType(ContentType.JSON)
                 .when()
                 .get("/v1/analyses?page=0&size=1")
                 .then()
-                .statusCode(200)
                 .extract()
-                .response()
-                .body()
                 .path("[0].content.id");
                 //.jsonPath()
                 //.getInt("content.id");
